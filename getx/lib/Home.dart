@@ -47,7 +47,38 @@ class _HomeState extends State<Home> {
       body: Center(
         child: Column(
           children: [
-            
+            ElevatedButton(
+                onPressed: () {
+                  showSnackbar();
+                },
+                child: Text('Button')),
+            Card(
+              child: ListTile(
+                  title: Text("hollaaaaa"),
+                  subtitle: Text('SnakBAr Example'),
+                  onTap: () {
+                    Get.snackbar('Sheraz BAjwa', "Welcome to bajwa APP");
+                  }),
+            ),
+            ElevatedButton(
+                onPressed: () {
+                  Get.defaultDialog(
+                      title: 'Sheraz BAJWA',
+                      middleText: "Your going good baby",
+                      middleTextStyle: TextStyle(color: Colors.amber),
+                      confirm: TextButton(
+                        onPressed: () {
+                          Navigator.pop(context);
+                        },
+                        child: Text("OK"),
+                      ));
+                },
+                child: Text("OHH Click Me")),
+            ElevatedButton(
+                onPressed: () {
+                  Get.to(Screen1());
+                },
+                child: Text("GetX Routes")),
             Card(
               child: ListTile(
                   title: Text("GetX bottom Sheet"),
