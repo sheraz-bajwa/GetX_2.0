@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:getx/GetXstatemanagment/AddfavExample4.dart';
+import 'package:getx/GetXstatemanagment/Example2.dart';
 import 'package:getx/GetXstatemanagment/FirestExample.dart';
+import 'package:getx/GetXstatemanagment/ThirdExample.dart';
 import 'package:getx/Home.dart';
 
 void main() {
@@ -16,7 +19,7 @@ class MyApp extends StatelessWidget {
     return GetMaterialApp(
       title: 'Flutter Demo',
       debugShowCheckedModeBanner: false,
-      home: const FirstExample(),
+      home: const AddFavExample(),
     );
   }
 }

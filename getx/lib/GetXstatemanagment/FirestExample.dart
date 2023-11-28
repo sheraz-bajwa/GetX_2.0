@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:getx/GetXstatemanagment/Counter_controler.dart';
+import 'package:getx/GetXstatemanagment/GetXcontroler.dart';
 import 'package:getx/GetxHeigh&Width.dart';
 
 class FirstExample extends StatefulWidget {
