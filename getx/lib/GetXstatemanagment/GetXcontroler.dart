@@ -1,3 +1,9 @@
+import 'package:getx/GetXstatemanagment/AddfavExample4.dart';
+import 'package:getx/Home.dart';
+import 'package:getx/GetXstatemanagment/Example2.dart';
+import 'package:getx/GetXstatemanagment/FirestExample.dart';
+import 'package:getx/GetXstatemanagment/ThirdExample.dart';
+
 import 'package:get/get.dart';
 import 'package:get/get_state_manager/get_state_manager.dart';
 
@@ -24,5 +30,25 @@ class ThirdExampleSwithButton extends GetxController {
   ButtonController(bool val) {
     notification.value = val;
     print(notification.value);
+  }
+}
+
+class ForthExampleAddFavorite extends GetxController {
+  RxList<String> Favorate = [
+    'Mango',
+    'Nazia',
+    'Sheraz',
+    'Bibi',
+    'Bajwa',
+    'Punjabi',
+  ].obs;
+  RxList TempList = [].obs;
+
+  AddFavoriteButton(String value) {
+    TempList.add(value);
+  }
+
+  RemoveFavoriteButton(String value) {
+    TempList.add(value);
   }
 }

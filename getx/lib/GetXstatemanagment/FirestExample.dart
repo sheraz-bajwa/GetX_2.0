@@ -2,6 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:getx/GetXstatemanagment/GetXcontroler.dart';
 import 'package:getx/GetxHeigh&Width.dart';
+import 'package:getx/GetXstatemanagment/AddfavExample4.dart';
+import 'package:getx/Home.dart';
+import 'package:getx/GetXstatemanagment/Example2.dart';
+import 'package:getx/GetXstatemanagment/FirestExample.dart';
+import 'package:getx/GetXstatemanagment/ThirdExample.dart';
 
 class FirstExample extends StatefulWidget {
   const FirstExample({super.key});

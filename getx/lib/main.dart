@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:getx/ChartFlutter.dart';
 import 'package:getx/GetXstatemanagment/AddfavExample4.dart';
+import 'package:getx/Home.dart';
 import 'package:getx/GetXstatemanagment/Example2.dart';
 import 'package:getx/GetXstatemanagment/FirestExample.dart';
 import 'package:getx/GetXstatemanagment/ThirdExample.dart';
-import 'package:getx/Home.dart';
+import 'package:getx/GetXstatemanagment/GetXcontroler.dart';
 
 void main() {
   runApp(const MyApp());
@@ -19,7 +21,7 @@ class MyApp extends StatelessWidget {
     return GetMaterialApp(
       title: 'Flutter Demo',
       debugShowCheckedModeBanner: false,
-      home: const AddFavExample(),
+      home: AddFavExample(),
     );
   }
 }
