@@ -7,6 +7,7 @@ import 'package:getx/GetXstatemanagment/Example2.dart';
 import 'package:getx/GetXstatemanagment/FirestExample.dart';
 import 'package:getx/GetXstatemanagment/ThirdExample.dart';
 import 'package:getx/GetXstatemanagment/GetXcontroler.dart';
+import 'package:getx/MVVM/Landing.dart';
 
 void main() {
   runApp(const MyApp());
@@ -21,7 +22,7 @@ class MyApp extends StatelessWidget {
     return GetMaterialApp(
       title: 'Flutter Demo',
       debugShowCheckedModeBanner: false,
-      home: AddFavExample(),
+      home: BirthdayScreen(),
     );
   }
 }
