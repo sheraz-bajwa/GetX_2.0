@@ -1,7 +1,8 @@
 import 'dart:math';
 import 'package:lottie/lottie.dart';
-
+import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter/material.dart';
+import 'package:animated_text_kit/animated_text_kit.dart';
 
 class BirthdayScreen extends StatelessWidget {
   @override
@@ -28,43 +29,46 @@ class BirthdayScreen extends StatelessWidget {
                     fontWeight: FontWeight.bold,
                   ),
                 ),
+                TextDetail(),
                 SizedBox(height: 10),
-                Text(
-                  'May all your wishes come true!',
-                  style: TextStyle(
-                    fontSize: 18,
-                    color: Colors.white,
-                  ),
-                ),
-                SizedBox(height: 20),
-                // Text with different colors
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Text(
-                      'Have a ',
-                      style: TextStyle(
-                        fontSize: 18,
-                        color: Colors.white,
-                      ),
-                    ),
-                    Text(
-                      'fantastic ',
-                      style: TextStyle(
-                        fontSize: 18,
-                        color: Colors.blue,
-                        fontWeight: FontWeight.bold,
-                      ),
-                    ),
-                    Text(
-                      'day!',
-                      style: TextStyle(
-                        fontSize: 18,
-                        color: Colors.white,
-                      ),
-                    ),
-                  ],
-                ),
+
+                TextDetail2(),
+                // Text(
+                //   'May all your wishes come true!',
+                //   style: TextStyle(
+                //     fontSize: 18,
+                //     color: Colors.white,
+                //   ),
+                // ),
+                // SizedBox(height: 20),
+                // // Text with different colors
+                // Row(
+                //   mainAxisAlignment: MainAxisAlignment.center,
+                //   children: [
+                //     Text(
+                //       'Have a ',
+                //       style: TextStyle(
+                //         fontSize: 18,
+                //         color: Colors.white,
+                //       ),
+                //     ),
+                //     Text(
+                //       'fantastic ',
+                //       style: TextStyle(
+                //         fontSize: 18,
+                //         color: Colors.blue,
+                //         fontWeight: FontWeight.bold,
+                //       ),
+                //     ),
+                //     Text(
+                //       'day!',
+                //       style: TextStyle(
+                //         fontSize: 18,
+                //         color: Colors.white,
+                //       ),
+                //     ),
+                //   ],
+                // ),
               ],
             ),
           ),
@@ -114,7 +118,7 @@ class _FireCrackersState extends State<FireCrackers>
           child: Icon(
             Icons.favorite,
             color: Colors.red,
-            size: 20,
+            size: 40,
           ),
         );
       },
@@ -205,22 +209,18 @@ class _BouncingCakeState extends State<BouncingCake>
           height: _bounceAnimation.value,
           width: _bounceAnimation.value,
           child: GestureDetector(
-            onTap: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (context) => CakeDetails(),
-                ),
-              );
-            },
-            child: Hero(
-              tag: 'cakeTag',
-              child: Image.asset(
-                'assets/cake.png', // Replace with your image path
-                fit: BoxFit.cover,
-              ),
-            ),
-          ),
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => CakeDetails(),
+                  ),
+                );
+              },
+              child: Hero(
+                  tag: 'cakeTag',
+                  child:
+                      Lottie.asset('assets/BD.json', height: 400, width: 400))),
         );
       },
     );
@@ -234,14 +234,73 @@ class CakeDetails extends StatelessWidget {
       backgroundColor: Colors.pinkAccent,
       body: Center(
         child: GestureDetector(
-          onTap: () {
-            Navigator.pop(context);
-          },
-          child: Hero(
-            tag: 'cakeTag',
-            child: Lottie.asset('assets/BD.json',
-                      height: 200, width: 200))),
+            onTap: () {
+              Navigator.pop(context);
+            },
+            child: Hero(
+                tag: 'cakeTag',
+                child:
+                    Lottie.asset('assets/BD.json', height: 400, width: 400))),
+      ),
+    );
+  }
+}
+
+class TextDetail extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return SizedBox(
+        width: 250.0,
+        child: DefaultTextStyle(
+          style: const TextStyle(
+            fontSize: 30.0,
+            fontFamily: 'Bobbers',
           ),
-        );
+          child: AnimatedTextKit(
+            animatedTexts: [
+              TyperAnimatedText('Happy Birthday!'),
+              TyperAnimatedText('May all your wishes come true!'),
+              TyperAnimatedText('Have a Fantastic Day'),
+            
+            ],
+            onTap: () {
+              print("Tap Event");
+            },
+          ),
+        ));
+  }
+}
+
+class TextDetail2 extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      mainAxisSize: MainAxisSize.min,
+      children: <Widget>[
+        const SizedBox(width: 20.0, height: 100.0),
+        const Text(
+          'Stay',
+          style: TextStyle(fontSize: 43.0, color: Colors.white),
+        ),
+        const SizedBox(width: 20.0, height: 100.0),
+        DefaultTextStyle(
+          style: const TextStyle(
+            fontSize: 40.0,
+            color: Colors.greenAccent,
+            fontFamily: 'Horizon',
+          ),
+          child: AnimatedTextKit(
+            animatedTexts: [
+              RotateAnimatedText('HAPPY'),
+              RotateAnimatedText('BEAUTIFULL'),
+              RotateAnimatedText('LOVING'),
+            ],
+            onTap: () {
+              print("Tap Event");
+            },
+          ),
+        ),
+      ],
+    );
   }
 }
